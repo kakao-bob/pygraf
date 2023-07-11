@@ -28,19 +28,29 @@ width - ширина _(int)_ )
 >Чтобы окно не закрывалось после построения графика, используйте функцию screen_save()
 
 -----
-##  **Виды уравнений**
-На данный момент доступны следующие виды уравнений:
-1.  _**y = ... x**_ (задаётся y, зависимый от x)
-> y_plot(**equation**, - выражение _(string)_
+## _**y_plot** (y = ... x)_
+(задаётся y, зависимый от x)
+> y_plot(**equation**, - выражение _(string)_,
+mult - читайте ниже,
  x_from, - миним. значение x _(int)_
  x_to - макс. значение x _(int)_ )
 
 > Пример:
 ```
-urav = y_plot("y = 2 * x + 15", -10, 70)
+urav = y_plot("y = 2 * x + 15", 1, -10, 70)
 urav.draw("red")
 ```
+* Параметр **mult** (доступен с версии 0.0.2) домножает Y на указанное значение _(int, float)_
+```python
+urav = y_plot("y = x ** 2", mult = 1)
+urav.draw("green")
+urav_m = y_plot("y = x ** 2", mult = 0.1)
+urav_m.draw("red")
+```
+<img src="images/multip.jpg" alt="Сравнение" width="200"/>
+
 > Функция draw(**color** - цвет _(string)_ ) может принимать такие значения, как "red", "yellow", "green", "blue" и так далее.
+
 
 ------
 
@@ -55,7 +65,7 @@ start_y - смещение по y _(int)_ )
 ```python
 import turtle
 from pygraf import *
-import random
+
 
 screen_conf("Example", 500, 500)
 draw_coord(200)
@@ -68,12 +78,13 @@ for i in range(101):
 cus = list_plot(bidon, -150, -200)
 cus.draw("red")
 
-urav = y_plot("y = 2 * x + 15", -10, 70)
+urav = y_plot("y = 2 * x + 15", 1, -10, 70)
 urav.draw("green")
 
 screen_save()
 ```
-<img src="images/ex.jpg" alt="Скриншот примера" width="200"/>
+<img src="images/pic_plot.jpg" alt="Скриншот примера" width="200"/>
 
 _P.S. Мне 13 лет, и я только учусь в программировании, так что не судите строго_
+
 _* - я вряд ли буду опубликовывать библиотеку в PyPI_
