@@ -32,6 +32,7 @@ def screen_conf(title: str="Graph", height: int=500, width:int=500, anim:bool=Fa
 
 	t.title(title)
 
+
 def screen_save():
 	"""
 	Не закрывать окно и начать отслеживать перемещение.
