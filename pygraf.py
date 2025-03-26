@@ -51,8 +51,8 @@ def screen_save():
 
 
 	turtle.listen()
-	turtle.onkey(lambda: move([-100, -100], [100, 100], True), "-" ) # -, уменьшение
-	turtle.onkey(lambda: move([100, 100], [-100, -100], True), "=") # +, приближение
+	turtle.onkey(lambda: move([-100, -100], [100, 100], True), "9" ) # -, уменьшение
+	turtle.onkey(lambda: move([100, 100], [-100, -100], True), "0") # +, приближение
 	turtle.onkey(lambda: move([0, 100], [0, 100]), "Up")
 	turtle.onkey(lambda: move([0, -100], [0, -100]), "Down")
 	turtle.onkey(lambda: move([-100, 0], [-100, 0]), "Left")
